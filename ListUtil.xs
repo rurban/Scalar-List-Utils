@@ -1550,12 +1550,12 @@ PPCODE:
     else if (!SvOK(sub))
         croak(PL_no_usym, "a subroutine");
     else if (PL_op->op_private & HINT_STRICT_REFS)
-        croak("Can't use string (\"%.32s\") as %s ref while \"strict refs\" in use",
-              SvPV_nolen(sub), "a subroutine");
+        croak("Can't use string (\"%" SVf "\") as %s ref while \"strict refs\" in use",
+              SVfARG(sub), "a subroutine");
     else if ((gv = gv_fetchsv(sub, FALSE, SVt_PVCV)))
         cv = GvCVu(gv);
     if (!cv)
-        croak("Undefined subroutine %s", SvPV_nolen(sub));
+        croak("Undefined subroutine %" SVf, SVfARG(sub));
     if (SvTYPE(cv) != SVt_PVCV && SvTYPE(cv) != SVt_PVFM)
         croak("Not a subroutine reference");
     for (s = nameptr; s <= nameptr + namelen; s++) {
