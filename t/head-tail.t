@@ -52,7 +52,7 @@ is( scalar @ary, 0 );
 is( scalar @ary, 0 );
 
 eval '@ary = head';
-like( $@, qr{^Not enough arguments for List::Util::head} );
+like( $@, qr{^Not enough arguments for .*List::Util::head} );
 
 @ary = head 4, ( 4, 5, 6 );
 is( scalar @ary, 3 );
@@ -94,4 +94,4 @@ is( scalar @ary, 0 );
 is( scalar @ary, 0 );
 
 eval '@ary = tail';
-like( $@, qr{^Not enough arguments for List::Util::tail} );
+like( $@, qr{^Not enough arguments for .*List::Util::tail} );
