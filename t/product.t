@@ -113,8 +113,11 @@ SKIP: {
   $t = product($max, $min);
   is($t, (1<<31) - (1<<62), 'max * min');
 
-  $t = product($max, $max);
-  is($t,  4611686014132420609, 'max * max'); # (1<<62)-(1<<32)+1), but Perl 5.6 does not compute constant correctly
+  SKIP: {
+    skip "$] has no proper stringify overload", 1 if $] < 5.008;
+    $t = product($max, $max);
+    is($t,  (1<<62)-(1<<32)+1, 'max * max');
+  }
 
   $t = product($min*8, $min);
   cmp_ok($t, '>',  (1<<61), 'min*8*min'); # may be an NV
