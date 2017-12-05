@@ -920,6 +920,8 @@ PPCODE:
 
     if(!(items % 2) && ckWARN(WARN_MISC))
         warn("Odd number of elements in pairfirst");
+    if(cv == Nullcv)
+        croak("Not a subroutine reference");
 
     agv = gv_fetchpv("a", GV_ADD, SVt_PV);
     bgv = gv_fetchpv("b", GV_ADD, SVt_PV);
@@ -1004,6 +1006,8 @@ PPCODE:
 
     if(!(items % 2) && ckWARN(WARN_MISC))
         warn("Odd number of elements in pairgrep");
+    if(cv == Nullcv)
+        croak("Not a subroutine reference");
 
     agv = gv_fetchpv("a", GV_ADD, SVt_PV);
     bgv = gv_fetchpv("b", GV_ADD, SVt_PV);
@@ -1091,6 +1095,8 @@ PPCODE:
 
     if(!(items % 2) && ckWARN(WARN_MISC))
         warn("Odd number of elements in pairmap");
+    if(cv == Nullcv)
+        croak("Not a subroutine reference");
 
     agv = gv_fetchpv("a", GV_ADD, SVt_PV);
     bgv = gv_fetchpv("b", GV_ADD, SVt_PV);
