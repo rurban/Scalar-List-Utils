@@ -1,3 +1,7 @@
+1.49_10 -- 2017-12-18 rurban
+        * Fixup stupid pairmap code from 1.49 upstream
+        * Relax an overflowing t/product.t test
+
 1.49_09 -- 2017-12-05 rurban
         More backports from cperl:
         * Proper 5.6 skip messages
