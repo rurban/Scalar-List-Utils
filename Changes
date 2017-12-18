@@ -1,3 +1,9 @@
+1.50_10 -- 2018-09-04 rurban
+        * honor PERL_NO_QUOTE_PKGSEPERATOR
+        * merged %DB::sub tests
+        * merge with upstream %DB::sub support (main:: or not, utf8),
+          exotic_names.t and subname.t
+
 1.50 -- 2018-02-20 19:13:27
 	[CHANGES]
 	 * Added head() and tail() functions (thanks preaction)
@@ -12,6 +18,10 @@
 	   (RT#124017)
          * Use sv_rvunweaken() in Scalar::Util::unweaken() (thanks ilmari)
 	 * Misc. fixes for perl 5.6
+
+1.49_10 -- 2017-12-18 rurban
+        * Fixup stupid pairmap code from 1.49 upstream
+        * Relax an overflowing t/product.t test
 
 1.49_09 -- 2017-12-05 rurban
         More backports from cperl:
