@@ -1,3 +1,6 @@
+1.50_11 -- 2018-09-05 rurban
+        * TODO rt-96343.t for 5.22.[01]
+
 1.50_10 -- 2018-09-04 rurban
         * honor PERL_NO_QUOTE_PKGSEPERATOR
         * merged %DB::sub tests
